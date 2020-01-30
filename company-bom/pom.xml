@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>company-nexus</artifactId>
+        <groupId>com.company</groupId>
+        <version>1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>company-bom</artifactId>
+    <version>1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <common.version>1.0.0-SNAPSHOT</common.version>
+        <crm.version>1.0.0-SNAPSHOT</crm.version>
+        <user.version>1.0.0-SNAPSHOT</user.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- common -->
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <!-- crm -->
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-crm-api</artifactId>
+                <version>${crm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-crm-controller</artifactId>
+                <version>${crm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-crm-service</artifactId>
+                <version>${crm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-crm-ui</artifactId>
+                <version>${crm.version}</version>
+            </dependency>
+            <!-- user -->
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-user-api</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-user-controller</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-user-service</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-user-ui</artifactId>
+                <version>${user.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

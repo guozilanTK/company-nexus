@@ -1,0 +1,36 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.company</groupId>
+    <artifactId>company-nexus</artifactId>
+    <version>1</version>
+    <packaging>pom</packaging>
+
+    <name>company-nexus</name>
+    <description>公司 Nexus 基础配置</description>
+    <url>http://localhost:8081/</url>
+    <!-- 发布配置 -->
+    <distributionManagement>
+        <!-- 快照版仓库 -->
+        <snapshotRepository>
+            <!-- 和 settings.xml 中的快照版 id 保持一致 -->
+            <id>nexus-snapshots</id>
+            <!-- Nexus 中快照版仓库的地址 -->
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <!-- 发布版仓库 -->
+        <repository>
+            <!-- 和 settings.xml 中的发布版 id 保持一致 -->
+            <id>nexus-releases</id>
+            <!-- Nexus 中发布版仓库的地址 -->
+            <url>http://localhost:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <modules>
+        <module>company-dependencies</module>
+        <module>company-bom</module>
+        <module>company-parent</module>
+    </modules>
+</project>

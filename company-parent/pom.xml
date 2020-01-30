@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>company-nexus</artifactId>
+        <groupId>com.company</groupId>
+        <version>1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>company-parent</artifactId>
+    <version>1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <company-bom.version>1-SNAPSHOT</company-bom.version>
+        <company-dependencies.version>1.0.0-SNAPSHOT</company-dependencies.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-bom</artifactId>
+                <version>${company-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>com.company</groupId>
+                <artifactId>company-dependencies</artifactId>
+                <version>${company-dependencies.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>company-parent-api</module>
+        <module>company-parent-controller</module>
+        <module>company-parent-service</module>
+        <module>company-parent-ui</module>
+    </modules>
+</project>
